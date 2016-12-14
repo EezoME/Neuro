@@ -58,5 +58,4 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 .idea/
-src/main/resources/
 src/test/
