@@ -18,7 +18,6 @@ public class MainGUI extends JFrame {
     private JRadioButton radioButtonAgeMore50;
     private JCheckBox checkBoxIsMarried;
     private JTextField textFieldScoringPoint;
-    private JTextField textFieldCreditSum;
     private JRadioButton radioButtonEducationSecondary;
     private JRadioButton radioButtonEducationSecondarySpecial;
     private JRadioButton radioButtonEducationHigher;
@@ -38,7 +37,7 @@ public class MainGUI extends JFrame {
 
     private MainGUI() {
         super("Neuron Net for Credit Score");
-        setSize(530, 450);
+        setSize(425, 400);
         setLocationRelativeTo(null);
         setContentPane(rootPanel);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -100,7 +99,7 @@ public class MainGUI extends JFrame {
         textFieldScoringPoint.setText(linearNetwork.simulate(inputData) + "");
 
         LVQNetwork lvqNetwork = new LVQNetwork(inputData.length);
-        labelStatus.setText(lvqNetwork.simulate(inputData) + "");
+        labelStatus.setText((lvqNetwork.simulate(inputData) == 0) ? "Схвалено" : "Не схвалено");
     }
 
     private void toggleCarAgeRadioEnableStatus(boolean isEnabled) {
